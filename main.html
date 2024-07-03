@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #677981; /* Light gray background */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #eaeeef; /* White background for the content */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+            width: 80%; /* Adjust width as needed */
+            max-width: 600px; /* Maximum width for smaller screens */
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+        }
+        .buttons {
+            margin: 20px 0;
+        }
+        .buttons a {
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .buttons a:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+        #data {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .data-item {
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function fetchData() {
+            const data = [
+                { id: 1, name: 'Data 1', description: 'HTML (HyperText Markup Language) is the foundational markup language used to structure content on the web, providing the basic framework for web pages through elements like headings, paragraphs, and images.' },
+                { id: 2, name: 'Data 2', description: 'CSS (Cascading Style Sheets) is a stylesheet language that controls the visual presentation and layout of these HTML documents, enabling the customization of colors, fonts, margins, and positioning through a variety of selectors and properties. ' },
+                { id: 3, name: 'Data 3', description: 'JavaScript is a powerful programming language that adds interactivity and dynamic functionality to web pages, allowing for features such as form validation, content updates, and user input handling. Enhancing these technologies is Bootstrap, a popular front-end framework that simplifies the development of responsive and mobile-first websites with its pre-designed components, responsive grid system, and JavaScript plugins.' },
+                { id: 3, name: 'Data 4', description: 'Together, these technologies form the backbone of modern web development, facilitating the creation of engaging, aesthetically pleasing, and functional web experiences.' },
+            ];
+
+            const dataContainer = document.getElementById('data');
+            data.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'data-item';
+                div.innerHTML = `<strong>${item.name}</strong><p>${item.description}</p>`;
+                dataContainer.appendChild(div);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchData);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Home Page</h1>
+        <div class="buttons">
+            <a href="login.html">Login</a>
+            <a href="index.html">Signup</a>
+        </div>
+        <div id="data">
+            <!-- Data will be fetched and displayed here -->
+        </div>
+    </div>
+</body>
+</html>
